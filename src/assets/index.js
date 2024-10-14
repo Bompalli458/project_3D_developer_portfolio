@@ -1,4 +1,5 @@
-import logo from "./logo.svg";
+import logo from "./logo.png";
+// import logo from "./logo.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -12,6 +13,12 @@ import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
+import springboot from "./tech/springboot.png";
+import aws from "./tech/aws.png";
+import efundzz from "./tech/efundzz.png"
+import efundzlogo from "./tech/efundzlogo.png";
+import purviewlogo from "./tech/purviewlogo.png";
+import chatbot from "./tech/chatbot.png";
 import javascript from "./tech/javascript.png";
 import mongodb from "./tech/mongodb.png";
 import nodejs from "./tech/nodejs.png";
@@ -59,4 +66,10 @@ export {
   carrent,
   jobit,
   tripguide,
+  springboot,
+  aws,
+  efundzz,
+  efundzlogo,
+  chatbot,
+  purviewlogo
 };
