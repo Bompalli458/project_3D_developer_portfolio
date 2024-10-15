@@ -6,18 +6,18 @@ import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
-  const [active, setActive] = useState(""); 
+  const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      setScrolled(scrollTop > 100);
-    
-    
-    
-    
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -43,8 +43,8 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer flex'>
-            &nbsp;
+          <p className='text-white text-[18px] font-bold cursor-pointer flex '>
+             &nbsp;
             <span className='sm:block hidden'>BOMPALLI NARASIMHULU</span>
           </p>
         </Link>
@@ -84,7 +84,7 @@ const Navbar = () => {
                     active === nav.title ? "text-white" : "text-secondary"
                   }`}
                   onClick={() => {
-                    setToggle(false);
+                    setToggle(!toggle);
                     setActive(nav.title);
                   }}
                 >
