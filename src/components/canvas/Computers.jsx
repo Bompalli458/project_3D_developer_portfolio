@@ -9,19 +9,20 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      {/* Adjust light settings to reduce GPU load */}
+      <hemisphereLight intensity={0.1} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
-        angle={0.12}
+        angle={0.15}
         penumbra={1}
-        intensity={1}
-        castShadow
+        intensity={isMobile ? 0.7 : 1} // Reduce intensity on mobile
+        castShadow={!isMobile} // Disable shadows on mobile
         shadow-mapSize={1024}
       />
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
+        scale={isMobile ? 0.65 : 0.75} // Slightly smaller on mobile
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
@@ -33,37 +34,37 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    // Add a small debounce to prevent unnecessary re-renders
+    const debouncedHandleChange = debounce(handleMediaQueryChange, 100);
 
-    // Remove the listener when the component is unmounted
+    mediaQuery.addEventListener("change", debouncedHandleChange);
+
+    // Set initial value
+    setIsMobile(mediaQuery.matches);
+
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      mediaQuery.removeEventListener("change", debouncedHandleChange);
     };
   }, []);
 
   return (
     <Canvas
-      frameloop='demand'
-      shadows
-      dpr={[1, 2]}
+      frameloop="demand"
+      shadows={!isMobile} // Disable shadows on mobile
+      dpr={isMobile ? [1, 1.5] : [1, 2]} // Lower dpr on mobile
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
+          enablePan={isMobile} // Enable panning on mobile
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
@@ -73,6 +74,15 @@ const ComputersCanvas = () => {
       <Preload all />
     </Canvas>
   );
+};
+
+// Debounce function to avoid rapid state updates
+const debounce = (func, delay) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func(...args), delay);
+  };
 };
 
 export default ComputersCanvas;
