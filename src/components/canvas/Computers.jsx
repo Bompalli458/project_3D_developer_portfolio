@@ -54,8 +54,8 @@ const ComputersCanvas = () => {
       style={{
         width: "100%",
         height: "100vh",
-        backgroundColor: "#000", // Set background to black
-        overflow: "hidden", // Prevent scrollbars
+        backgroundColor: "#000",
+        overflow: "hidden",
       }}
     >
       <Canvas
@@ -65,7 +65,7 @@ const ComputersCanvas = () => {
         camera={{ position: [20, 3, 5], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
         onCreated={({ gl }) => {
-          gl.setClearColor("#000"); // Ensure background stays black
+          gl.setClearColor(0x000000, 1);
         }}
       >
         <Suspense fallback={<CanvasLoader />}>
@@ -77,13 +77,13 @@ const ComputersCanvas = () => {
           />
           <Computers isMobile={isMobile} />
         </Suspense>
-
         <Preload all />
       </Canvas>
     </div>
   );
 };
 
+// Debounce function to limit event triggers
 const debounce = (func, delay) => {
   let timeout;
   return (...args) => {
