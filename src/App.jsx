@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import SidePanel from "./components/SidePanel";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
@@ -10,6 +11,7 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
+        <SidePanel />
         <About />
         <Experience />
         <Tech />

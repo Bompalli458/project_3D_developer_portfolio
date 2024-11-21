@@ -51,18 +51,22 @@ const services = [
     title: "Web Developer",
     icon: web,
   },
-  // {
-  //   title: "React Native Developer",
-  //   icon: mobile,
-  // },
+  {
+    title: "Android App Developer",
+    icon: mobile,
+  },
   {
     title: "Backend Developer",
     icon: backend,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Fronted Developer",
+    icon: mobile,
   },
+  // {
+  //   title: "Content Creator",
+  //   icon: creator,
+  // },
 ];
 
 const technologies = [
@@ -134,7 +138,7 @@ const experiences = [
     company_name: "EFUNDZ",
     icon: efundzlogo,
     iconBg: "#E6DEDD",
-    date: "sep 2023 - present",
+    date: "Sep 2023 - present",
     points: [
     "Developing and maintaining RESTful web applications using Spring Boot, PostgreSQL, and Docker.",
     "Integrating third-party services, APIs, and databases to enhance product capabilities.",
@@ -148,7 +152,7 @@ const experiences = [
     company_name: "Purview Services",
     icon: purviewlogo,
     iconBg: "#E6DEDD",
-    date: "jun 2023 - Sep 2023",
+    date: "Jun 2023 - Sep 2023",
     points: [
       "Developed AI chatbots, increasing response efficiency by 25% and reducing manual handling by 20%.",
       "Implemented advanced NLP techniques in RASA chatbot, improving intent recognition accuracy by 25% and enhancing user experience.",
@@ -215,7 +219,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Efundz",
+    name: "Efundzz",
     description:
       "EFundzz is a financial platform that streamlines payment processes, offering solutions like loan facilitation, vendor payments, and invoice management. It helps businesses automate financial workflows, ensuring efficient cash flow and compliance. The platform partners with financial institutions to provide quick funding and seamless transaction management",
     tags: [

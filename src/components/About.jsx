@@ -47,11 +47,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in java and
-        JavaScript, and expertise in frameworks like React, Three.js and spring boot.
-        I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        I'm a software developer skilled in Java, Python, and JavaScript, with expertise in frameworks like React, Django, and Spring Boot. I build efficient, scalable, and user-friendly solutions, leveraging tools like AWS, Redis, and CI/CD pipelines to solve real-world problems. Let’s bring your ideas to life!
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>
