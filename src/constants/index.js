@@ -1,5 +1,7 @@
 import {
   mobile,
+  harinad,
+  eswar,
   backend,
   creator,
   web,
@@ -135,10 +137,10 @@ const technologies = [
 const experiences = [
   {
     title: "Software Developer",
-    company_name: "EFUNDZ",
+    company_name: "EFUNDZZ",
     icon: efundzlogo,
     iconBg: "#E6DEDD",
-    date: "Sep 2023 - present",
+    date: "Sep 2023 - Present",
     points: [
     "Developing and maintaining RESTful web applications using Spring Boot, PostgreSQL, and Docker.",
     "Integrating third-party services, APIs, and databases to enhance product capabilities.",
@@ -197,7 +199,7 @@ const testimonials = [
     name: "Eswar Manjunath",
     designation: "CEO",
     company: "Efundzz",
-    image: "https://media.licdn.com/dms/image/v2/C5603AQHQM_5LctLMPg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1639997205055?e=1732752000&v=beta&t=I1i5CxvxmjcbMEdXIpugWxwkLRqgT_XZ2sjJl10ZgVw",
+    image: eswar
   },
   {
     testimonial:
@@ -205,7 +207,7 @@ const testimonials = [
     name: "Harinadh Reddy",
     designation: "Product Owner",
     company: "Efundzz",
-    image: "https://media.licdn.com/dms/image/v2/D4E03AQGbfO2DFzOevw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1722206902645?e=1732752000&v=beta&t=nnJijjfgSifs8TveKYbyTJENjxdzeNnxDfA8H4YVacg",
+    image: harinad
   },
   {
     testimonial:
